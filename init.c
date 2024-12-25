@@ -18,8 +18,7 @@ void	fractal_init(t_fractal *fractal, char *name)
 	fractal->diversion_radius = 2;
 	fractal->iterations_count = 200;
 	// av[1] -----> name
-	fractal->math_func = mandelbrot_func;
-	fractal->math_func = julia_func;
+	fractal->math_func = mandelbrot_julia_func;
 
 	fractal->shift_x = 0;
 	fractal->shift_y = -0.75;

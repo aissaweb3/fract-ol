@@ -7,8 +7,8 @@
 #include <mlx.h>
 #include <stdio.h>
 
-# define WIDTH  1000
-# define HEIGHT 1000
+# define WIDTH  2000
+# define HEIGHT 2000
 
 typedef struct s_complex
 {
@@ -16,7 +16,7 @@ typedef struct s_complex
 	double	Im;
 }	t_complex;
 
-typedef t_complex (*fractal_function)(t_complex *, void *);
+typedef void (*fractal_function)(t_complex *, void *);
 
 typedef struct	s_img_data {
 	void	*img;
@@ -61,7 +61,7 @@ double			complex_module(t_complex z);
 
 double			map(double input, double old_min, double old_max, double new_min, double new_max);
 
-t_complex		mandelbrot_func(t_complex *z, void *params);
-t_complex		julia_func(t_complex *z, void *params);
+void			mandelbrot_julia_func(t_complex *z, void *params);
+void			julia_func(t_complex *z, void *params);
 
 #endif
