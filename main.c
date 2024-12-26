@@ -6,7 +6,7 @@ int	main(int ac, char **av)
 {
 	t_fractal	fractal;
 
-	//check argv
+	if (ac)
 	fractal_init(&fractal, av[1]);
 
 	fill_img(&fractal);
@@ -14,5 +14,4 @@ int	main(int ac, char **av)
 	handle_events(&fractal);
 
 	mlx_loop(fractal.mlx_connection);
-	
 }

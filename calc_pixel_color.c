@@ -11,13 +11,13 @@ unsigned int	calc_pixel_color(int x, int y, t_fractal *fractal)
 	{
 		result.Re = 0.0;
 		result.Im = 0.0;
-		c.Re = map(x + fractal->shift_x, 0, WIDTH , -2, +1) * fractal->zoom;
-		c.Im = map(y + fractal->shift_y, 0, HEIGHT, -1, +2) * fractal->zoom;
+		c.Re = map(x, 0, WIDTH , -2, +1) * fractal->zoom + fractal->shift_x;
+		c.Im = map(y, 0, HEIGHT, -1, +2) * fractal->zoom + fractal->shift_y;
 	}else{
 		c.Re = fractal->julia_x;
 		c.Im = fractal->julia_y;
-		result.Re = map(x + fractal->shift_x, 0, WIDTH , -2, +1) * fractal->zoom;
-		result.Im = map(y + fractal->shift_y, 0, HEIGHT, -1, +2) * fractal->zoom;
+		result.Re = map(x, 0, WIDTH , -2, +1) * fractal->zoom + fractal->shift_x;
+		result.Im = map(y, 0, HEIGHT, -1, +2) * fractal->zoom + fractal->shift_y;
 	}
 
 	while (++i < fractal->iterations_count)

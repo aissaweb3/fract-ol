@@ -1,1 +1,0 @@
-gcc *.c -Iminilibx-linux -Lminilibx-linux -lmlx_Linux -lX11 -lXext -lm -O3 -o fractol

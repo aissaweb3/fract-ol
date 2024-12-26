@@ -60,11 +60,18 @@ unsigned int	calc_pixel_color(int x, int y, t_fractal *fractal);
 
 // complex math
 t_complex		mul(t_complex a, t_complex b);
+t_complex		div(t_complex a, t_complex b);
 t_complex		add(t_complex a, t_complex b);
+t_complex		sub(t_complex a, t_complex b);
+t_complex		conjugate(t_complex z);
+
 double			complex_module(t_complex z);
 double			map(double input, double old_min, double old_max, double new_min, double new_max);
+
 void			mandelbrot_julia_func(t_complex *z, void *params);
-void			julia_func(t_complex *z, void *params);
+void			newton_algo_func(t_complex *z, void *params);
+void			burningship_func(t_complex *z, void *params);
+void			tricon_func(t_complex *z, void *params);
 
 
 // EVENTS

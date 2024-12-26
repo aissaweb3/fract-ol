@@ -16,9 +16,12 @@ void	fractal_init(t_fractal *fractal, char *name)
 										HEIGHT);
 
 	fractal->diversion_radius = 2;
-	fractal->iterations_count = 200;
+	fractal->iterations_count = 240;
 	// av[1] -----> name
+	fractal->math_func = burningship_func;
+	fractal->math_func = tricon_func;
 	fractal->math_func = mandelbrot_julia_func;
+	fractal->math_func = newton_algo_func;
 
 	fractal->shift_x = 0;
 	fractal->shift_y = 0;

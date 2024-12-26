@@ -5,7 +5,6 @@ void	fill_img(t_fractal *fractal)
 {
 	int x;
 	int y;
-    printf("%d %d\n", fractal->shift_x, fractal->shift_y);
 
 	x = -1;
 	while (++x < WIDTH)
