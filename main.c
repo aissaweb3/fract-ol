@@ -11,6 +11,8 @@ int	main(int ac, char **av)
 
 	fill_img(&fractal);
 	
+	handle_events(&fractal);
+
 	mlx_loop(fractal.mlx_connection);
 	
 }

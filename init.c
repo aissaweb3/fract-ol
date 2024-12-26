@@ -21,7 +21,10 @@ void	fractal_init(t_fractal *fractal, char *name)
 	fractal->math_func = mandelbrot_julia_func;
 
 	fractal->shift_x = 0;
-	fractal->shift_y = -0.75;
+	fractal->shift_y = 0;
+
+	fractal->julia_x = 0.0;
+	fractal->julia_y = 0.0;
 	fractal->zoom = 1;
 	
 	fractal->img.addr = mlx_get_data_addr(fractal->img.img,
