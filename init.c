@@ -58,6 +58,17 @@ static void	continue_init(t_fractal *fractal,
 			&fractal->img.endian);
 }
 
+static void	mlx_failure(t_fractal *fractal)
+{
+	if (fractal->mlx_connection)
+	{
+		mlx_destroy_display(fractal->mlx_connection);
+		free(fractal->mlx_connection);
+	}
+	write(1, "Minilibx error !", 17);
+	exit(0);
+}
+
 char	fractal_init(t_fractal *fractal, int argc, char **argv)
 {
 	char	*name;
@@ -72,13 +83,13 @@ char	fractal_init(t_fractal *fractal, int argc, char **argv)
 	fractal->name = name;
 	fractal->mlx_connection = mlx_init();
 	if (fractal->mlx_connection == NULL)
-		(write(1, "mlx connection error", 21), exit(0));
+		(mlx_failure(fractal));
 	fractal->mlx_window = mlx_new_window(fractal->mlx_connection,
 			WIDTH,
 			HEIGHT,
 			fractal->name);
 	if (fractal->mlx_window == NULL)
-		(write(1, "error creating window", 55), free(fractal->mlx_connection), exit(0));
+		(mlx_failure(fractal));
 	fractal->img.img = mlx_new_image(fractal->mlx_connection,
 			WIDTH,
 			HEIGHT);
