@@ -14,7 +14,7 @@
 
 void	my_mlx_pixel_put(t_img_data *img, int x, int y, int color)
 {
-	char			*dst;
+	char			*px_addr;
 	unsigned long	img_width;
 	unsigned long	pixel_index;
 	unsigned long	pixel_size;
@@ -22,8 +22,8 @@ void	my_mlx_pixel_put(t_img_data *img, int x, int y, int color)
 	img_width = img->line_length;
 	pixel_size = img->bits_per_pixel / 8;
 	pixel_index = y * img_width + x * pixel_size;
-	dst = img->addr + pixel_index;
-	*(unsigned int *)dst = color;
+	px_addr = img->addr + pixel_index;
+	*(unsigned int *)px_addr = color;
 }
 
 double	ft_atoi_dbl(char *str)
