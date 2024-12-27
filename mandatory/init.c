@@ -64,10 +64,10 @@ static void	mlx_failure(t_fractal *fractal)
 	{
 		if (fractal->img.img_ptr)
 			mlx_destroy_image(fractal->mlx_connection, fractal->img.img_ptr);
-		mlx_destroy_window(fractal->mlx_connection, fractal->mlx_connection);
 		free(fractal->mlx_connection);
+		fractal->mlx_connection = NULL;
 	}
-	write(1, "Minilibx error !", 17);
+	write(2, "Minilibx error !", 17);
 	exit(0);
 }
 

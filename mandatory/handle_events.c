@@ -51,7 +51,12 @@ int	julia_mouse_handler(int x, int y, void *param)
 
 static int	close_window(void *param)
 {
-	(void)param;
+	t_fractal *fractal;
+
+	fractal = (t_fractal *)param;
+	mlx_destroy_image(fractal->mlx_connection, fractal->img.img_ptr);
+	free(fractal->mlx_connection);
+	fractal->mlx_connection = NULL;
 	exit(0);
 }
 
@@ -77,7 +82,7 @@ int	key_press_handler(int keycode, void *param)
 	else if (keycode == LEFT_SHIFT)
 		fractal->mouse_track = !(fractal->mouse_track);
 	else if (keycode == ESC_KEY)
-		close_window(NULL);
+		close_window(fractal);
 	fill_img(fractal);
 	return (0);
 }
@@ -88,6 +93,6 @@ void	handle_events(t_fractal *fractal)
 	if (fractal->name[0] == 'J')
 		mlx_hook(fractal->mlx_window, 6, 0,
 			julia_mouse_handler, fractal);
-	mlx_hook(fractal->mlx_window, DESTROY_NOTIFY, 0, close_window, NULL);
+	mlx_hook(fractal->mlx_window, DESTROY_NOTIFY, 0, close_window, fractal);
 	mlx_key_hook(fractal->mlx_window, key_press_handler, fractal);
 }
