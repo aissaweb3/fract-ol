@@ -54,7 +54,8 @@ typedef struct s_fractal
 
 
 void			my_mlx_pixel_put(t_img_data *data, int x, int y, int color);
-void			fractal_init(t_fractal *fractal, char *name);
+char			fractal_init(t_fractal *fractal, int argc, char **argv);
+double			ft_atoi_dbl(char *str);
 void			fill_img(t_fractal *fractal);
 unsigned int	calc_pixel_color(int x, int y, t_fractal *fractal);
 

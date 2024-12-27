@@ -6,8 +6,9 @@ int	main(int ac, char **av)
 {
 	t_fractal	fractal;
 
-	if (ac)
-	fractal_init(&fractal, av[1]);
+	char error = fractal_init(&fractal, ac, av);
+	if (error)
+		return (1);
 
 	fill_img(&fractal);
 	
