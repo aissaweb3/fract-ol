@@ -26,5 +26,6 @@
 # define MINUS_KEY 27
 
 # define LEFT_SHIFT 257
+# define DESTROY_NOTIFY 17
 
 #endif
