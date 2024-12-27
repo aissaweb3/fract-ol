@@ -1,64 +1,54 @@
+/* ************************************************************************** */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   math_utils.c									   :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: ioulkhir <ioulkhir@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/12/27 22:17:02 by ioulkhir		  #+#	#+#			 */
+/*   Updated: 2024/12/27 22:17:56 by ioulkhir		 ###   ########.fr	   */
+/*																			*/
+/* ************************************************************************** */
 
 #include "fractol.h"
 
 t_complex	mul(t_complex a, t_complex b)
 {
 	t_complex	result;
-	
-	result.Re = ((a.Re * b.Re) - (b.Im * a.Im));
-	result.Im = ((a.Re * b.Im) + (b.Re * a.Im));
+
+	result.real = ((a.real * b.real) - (b.im * a.im));
+	result.im = ((a.real * b.im) + (b.real * a.im));
 	return (result);
 }
 
-t_complex		conjugate(t_complex z)
+t_complex	conjugate(t_complex z)
 {
 	t_complex	z_bar;
 
-	z_bar.Re = z.Re;
-	z_bar.Im = -z.Im;
+	z_bar.real = z.real;
+	z_bar.im = -z.im;
 	return (z_bar);
-}
-
-t_complex		div(t_complex a, t_complex b)
-{
-	t_complex	result;
-	double		denominator;
-	
-	result = mul(a, conjugate(b));
-	
-	denominator = mul(b, conjugate(b)).Re;
-	
-	result.Re /= denominator;
-	result.Im /= denominator;
-	return (result);
 }
 
 t_complex	add(t_complex a, t_complex b)
 {
 	t_complex	result;
-	
-	result.Re = a.Re + b.Re;
-	result.Im = a.Im + b.Im;
+
+	result.real = a.real + b.real;
+	result.im = a.im + b.im;
 	return (result);
 }
 
 t_complex	sub(t_complex a, t_complex b)
 {
 	t_complex	result;
-	
-	result.Re = a.Re - b.Re;
-	result.Im = a.Im - b.Im;
+
+	result.real = a.real - b.real;
+	result.im = a.im - b.im;
 	return (result);
 }
 
-
 double	complex_module(t_complex z)
 {
-	return (sqrt((z.Re * z.Re) + (z.Im * z.Im)));
+	return (sqrt((z.real * z.real) + (z.im * z.im)));
 }
-
-double	map(double input, double old_min, double old_max, double new_min, double new_max)
-{
-	return (((input - old_min) / (old_max - old_min)) * (new_max - new_min) + new_min);
-}
-
