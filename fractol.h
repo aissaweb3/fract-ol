@@ -45,6 +45,8 @@ typedef struct s_fractal
 	// julia
 	double				julia_x;
 	double				julia_y;
+	
+	char				mouse_track;
 
 	t_img_data			img;
 	

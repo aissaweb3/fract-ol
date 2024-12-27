@@ -62,6 +62,7 @@ char	fractal_init(t_fractal *fractal, int argc, char **argv)
 
 	fractal->julia_x = 0.0;
 	fractal->julia_y = 0.0;
+	fractal->mouse_track = 1;
 	if (fractal_index == 2)
 	{
 		fractal->julia_x = ft_atoi_dbl(argv[2]);
