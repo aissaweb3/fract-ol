@@ -10,10 +10,11 @@ int    scroll_handler(int button, int x, int y, void *param)
     if (button == 4)
         fractal->zoom *= 1.2;
     else if (button == 5)
+    {
         fractal->zoom *= 0.8;
-    
-	// fractal->shift_x = map(x, 0, WIDTH  , -2, +1) * fractal->zoom;
-	// fractal->shift_y = map(y, 0, HEIGHT , -1, +2) * fractal->zoom;
+		fractal->shift_x += map(x, 0, WIDTH  , -2, +1) * fractal->zoom;
+		fractal->shift_y += map(y, 0, HEIGHT , -1, +2) * fractal->zoom;
+    }
 	
     fill_img(fractal);
     return (0);
