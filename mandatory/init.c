@@ -52,7 +52,7 @@ static void	continue_init(t_fractal *fractal,
 		fractal->julia_y = ft_atoi_dbl(argv[3]);
 	}
 	fractal->zoom = 1;
-	fractal->img.addr = mlx_get_data_addr(fractal->img.img,
+	fractal->img.addr = mlx_get_data_addr(fractal->img.img_ptr,
 			&fractal->img.bits_per_pixel,
 			&fractal->img.line_length,
 			&fractal->img.endian);
@@ -62,7 +62,8 @@ static void	mlx_failure(t_fractal *fractal)
 {
 	if (fractal->mlx_connection)
 	{
-		mlx_destroy_image(fractal->mlx_connection, fractal->img.img);
+		if (fractal->img.img_ptr)
+			mlx_destroy_image(fractal->mlx_connection, fractal->img.img_ptr);
 		mlx_destroy_window(fractal->mlx_connection, fractal->mlx_connection);
 		free(fractal->mlx_connection);
 	}
@@ -72,16 +73,14 @@ static void	mlx_failure(t_fractal *fractal)
 
 char	fractal_init(t_fractal *fractal, int argc, char **argv)
 {
-	char	*name;
 	char	fractal_index;
 
 	if (argc == 1)
 		return (1);
-	name = argv[1];
-	fractal_index = invalid(name);
+	fractal->name = argv[1];
+	fractal_index = invalid(fractal->name);
 	if (fractal_index == 0)
 		return (1);
-	fractal->name = name;
 	fractal->mlx_connection = mlx_init();
 	if (fractal->mlx_connection == NULL)
 		(mlx_failure(fractal));
@@ -91,9 +90,11 @@ char	fractal_init(t_fractal *fractal, int argc, char **argv)
 			fractal->name);
 	if (fractal->mlx_window == NULL)
 		(mlx_failure(fractal));
-	fractal->img.img = mlx_new_image(fractal->mlx_connection,
+	fractal->img.img_ptr = mlx_new_image(fractal->mlx_connection,
 			WIDTH,
 			HEIGHT);
+	if (fractal->img.img_ptr == NULL)
+		(mlx_failure(fractal));
 	continue_init(fractal, fractal_index, argc, argv);
 	return (0);
 }

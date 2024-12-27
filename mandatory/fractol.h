@@ -31,7 +31,7 @@ typedef void	(*t_fractal_function)(t_complex *, void *);
 
 typedef struct s_img_data
 {
-	void	*img;
+	void	*img_ptr;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;

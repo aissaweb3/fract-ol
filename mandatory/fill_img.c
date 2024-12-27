@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 22:39:14 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/27 22:39:54 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2024/12/27 23:51:26 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	fill_img(t_fractal *fractal)
 				calc_pixel_color(x, y, fractal));
 	}
 	mlx_put_image_to_window(fractal->mlx_connection,
-		fractal->mlx_window, fractal->img.img, 0, 0);
+		fractal->mlx_window, fractal->img.img_ptr, 0, 0);
 }
