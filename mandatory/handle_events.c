@@ -91,7 +91,7 @@ void	handle_events(t_fractal *fractal)
 {
 	mlx_mouse_hook(fractal->mlx_window, scroll_handler, fractal);
 	if (fractal->name[0] == 'J')
-		mlx_hook(fractal->mlx_window, 6, 0,
+		mlx_hook(fractal->mlx_window, ON_MOUSEMOVE, 0,
 			julia_mouse_handler, fractal);
 	mlx_hook(fractal->mlx_window, DESTROY_NOTIFY, 0, close_window, fractal);
 	mlx_key_hook(fractal->mlx_window, key_press_handler, fractal);

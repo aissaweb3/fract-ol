@@ -27,5 +27,6 @@
 
 # define LEFT_SHIFT 257
 # define DESTROY_NOTIFY 17
+# define ON_MOUSEMOVE 6
 
 #endif
