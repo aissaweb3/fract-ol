@@ -19,10 +19,10 @@ $(NAME): $(OBJ)
 $(NAME_BNS): $(OBJ_BNS)
 	$(CC) $(CFLAGS) $(MLX_FLAGS) $(OBJ_BNS) -o $(NAME_BNS)
 
-mandatory/%.o: mandatory/%.c mandatory/fractal.h
+mandatory/%.o: mandatory/%.c mandatory/fractal.h mandatory/events.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus/%.o: bonus/%.c bonus/fractal.h
+bonus/%.o: bonus/%.c bonus/fractal.h bonus/events.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
