@@ -21,6 +21,15 @@ t_complex	mul(t_complex a, t_complex b)
 	return (result);
 }
 
+t_complex	conjugate(t_complex z)
+{
+	t_complex	z_bar;
+
+	z_bar.real = z.real;
+	z_bar.im = -z.im;
+	return (z_bar);
+}
+
 t_complex	add(t_complex a, t_complex b)
 {
 	t_complex	result;

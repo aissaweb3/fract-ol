@@ -51,6 +51,7 @@ typedef struct s_fractal
 	double				zoom;
 	double				julia_x;
 	double				julia_y;
+	char				mouse_track;
 	t_img_data			img;
 }	t_fractal;
 
@@ -65,12 +66,15 @@ unsigned int	calc_pixel_color(int x, int y, t_fractal *fractal);
 t_complex		mul(t_complex a, t_complex b);
 t_complex		add(t_complex a, t_complex b);
 t_complex		sub(t_complex a, t_complex b);
+t_complex		conjugate(t_complex z);
 double			complex_module(t_complex z);
 double			map(double input, double old_max,
 					double new_min, double new_max);
 
 // fractal functions
 void			mandelbrot_julia_func(t_complex *z, void *params);
+void			burningship_func(t_complex *z, void *params);
+void			tricon_func(t_complex *z, void *params);
 
 // EVENTS
 void			handle_events(t_fractal *fractal);

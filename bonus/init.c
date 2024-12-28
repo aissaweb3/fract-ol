@@ -25,6 +25,10 @@ char	invalid(char *name)
 		return (1);
 	if (!ft_strcmp(name, "Julia"))
 		return (2);
+	if (!ft_strcmp(name, "Burningship"))
+		return (3);
+	if (!ft_strcmp(name, "Tricon"))
+		return (4);
 	return (0);
 }
 
@@ -35,8 +39,13 @@ static void	continue_init(t_fractal *fractal,
 	fractal->iterations_count = 240;
 	if (fractal_index == 1 || fractal_index == 2)
 		fractal->math_func = mandelbrot_julia_func;
+	else if (fractal_index == 3)
+		fractal->math_func = burningship_func;
+	else if (fractal_index == 4)
+		fractal->math_func = tricon_func;
 	fractal->shift_x = 0;
 	fractal->shift_y = 0;
+	fractal->mouse_track = 1;
 	if (fractal_index == 2 && argc >= 4)
 	{
 		fractal->julia_x = ft_atoi_dbl(argv[2]);

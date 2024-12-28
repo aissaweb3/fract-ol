@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 22:15:24 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/28 13:49:47 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2024/12/27 23:03:59 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ static void	throw_usage(void)
 	write(2, "Bad usage !\n\nUsage :\n\t./fractol <FRACTAL_NAME>", 47);
 	write(2, "\n\n\t<FRACTAL_NAME>:", 19);
 	write(2, "\n\t\tMandelbrot", 14);
-	write(2, "\n\t\tJulia\n", 10);
+	write(2, "\n\t\tJulia", 9);
+	write(2, "\n\t\tBurningship", 15);
+	write(2, "\n\t\tTricon\n", 11);
 }
 
 int	main(int ac, char **av)

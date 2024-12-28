@@ -19,3 +19,22 @@ void	mandelbrot_julia_func(t_complex *z, void *params)
 	c = (t_complex *)params;
 	*z = (add(mul(*z, *z), *c));
 }
+
+void	burningship_func(t_complex *z, void *params)
+{
+	t_complex	abs_zn;
+	t_complex	c;
+
+	c = *(t_complex *)params;
+	abs_zn.real = fabs(z->real);
+	abs_zn.im = fabs(z->im);
+	*z = add(mul(abs_zn, abs_zn), c);
+}
+
+void	tricon_func(t_complex *z, void *params)
+{
+	t_complex	*c;
+
+	c = (t_complex *)params;
+	*z = (add(mul(conjugate(*z), conjugate(*z)), *c));
+}
