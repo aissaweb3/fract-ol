@@ -51,7 +51,7 @@ int	julia_mouse_handler(int x, int y, void *param)
 
 static int	close_window(void *param)
 {
-	t_fractal *fractal;
+	t_fractal	*fractal;
 
 	fractal = (t_fractal *)param;
 	mlx_destroy_image(fractal->mlx_connection, fractal->img.img_ptr);
