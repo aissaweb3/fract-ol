@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 10:14:22 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 11:05:53 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2024/12/29 13:02:55 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ double	ft_atoi_dbl(char *str)
 {
 	double	dec_part;
 	double	int_part;
-	int		sign;
+	double	sign;
 	double	i;
 
-	1 && (int_part = 0, dec_part = 0.0, sign = 1, i = 0.1);
+	1 && (int_part = 0, dec_part = 0.0, sign = 1.0, i = 0.1);
 	while (*str && *str == ' ')
 		str++;
 	if (*str == '+')
@@ -46,7 +46,7 @@ double	ft_atoi_dbl(char *str)
 		str++;
 	}
 	if (*str == 0 || *str != '.')
-		return (int_part);
+		return (int_part * sign);
 	while (*(++str) && ('0' <= *str && *str <= '9'))
 	{
 		dec_part += (*str - '0') * i;
