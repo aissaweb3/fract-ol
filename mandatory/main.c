@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/27 22:15:24 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/28 13:49:47 by ioulkhir         ###   ########.fr       */
+/*   Created: 2024/12/29 10:14:10 by ioulkhir          #+#    #+#             */
+/*   Updated: 2024/12/29 11:13:31 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ static void	throw_usage(void)
 	write(2, "Bad usage !\n\nUsage :\n\t./fractol <FRACTAL_NAME>", 47);
 	write(2, "\n\n\t<FRACTAL_NAME>:", 19);
 	write(2, "\n\t\tMandelbrot", 14);
-	write(2, "\n\t\tJulia\n", 10);
+	write(2, "\n\t\tJulia", 9);
+	write(2, "\n\n\tJulia:", 10);
+	write(2, "\n\t\t./fractol Julia Re(c) Im(c)\n", 31);
 }
 
 int	main(int ac, char **av)

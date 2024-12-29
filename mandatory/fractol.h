@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   fractol.h										  :+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: ioulkhir <ioulkhir@student.42.fr>		  +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2024/12/27 21:43:08 by ioulkhir		  #+#	#+#			 */
-/*   Updated: 2024/12/27 21:43:11 by ioulkhir		 ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/29 10:13:54 by ioulkhir          #+#    #+#             */
+/*   Updated: 2024/12/29 11:36:16 by ioulkhir         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
@@ -20,6 +20,12 @@
 
 # define WIDTH  800
 # define HEIGHT 800
+
+# define DFLT_WDTH_MIN -1
+# define DFLT_WDTH_MAX 1
+
+# define DFLT_HGHT_MIN -1
+# define DFLT_HGHT_MAX 1
 
 typedef struct s_complex
 {

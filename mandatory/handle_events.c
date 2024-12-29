@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   handle_events.c									:+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: ioulkhir <ioulkhir@student.42.fr>		  +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2024/12/27 22:23:44 by ioulkhir		  #+#	#+#			 */
-/*   Updated: 2024/12/27 22:26:00 by ioulkhir		 ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_events.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/29 10:14:00 by ioulkhir          #+#    #+#             */
+/*   Updated: 2024/12/29 11:19:53 by ioulkhir         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
@@ -24,20 +24,16 @@ int	scroll_handler(int button, int x, int y, void *param)
 	else if (button == SCROLL_DOWN)
 		zoom_factor = 0.9;
 	else
-		return (x + y * 0);
+		return ((x + y) * 0);
 	fractal->zoom *= zoom_factor;
 	fill_img(fractal);
 	return (0);
 }
 
-static int	close_window(void *param)
+int	close_window(t_fractal *fractal)
 {
-	t_fractal	*fractal;
-
-	fractal = (t_fractal *)param;
 	mlx_destroy_image(fractal->mlx_connection, fractal->img.img_ptr);
-	free(fractal->mlx_connection);
-	fractal->mlx_connection = NULL;
+	mlx_destroy_window(fractal->mlx_connection, fractal->mlx_window);
 	exit(0);
 }
 
@@ -48,7 +44,6 @@ int	key_press_handler(int keycode, void *param)
 	fractal = (t_fractal *)param;
 	if (keycode == ESC_KEY)
 		close_window(fractal);
-	fill_img(fractal);
 	return (0);
 }
 

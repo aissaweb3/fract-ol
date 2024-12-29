@@ -1,16 +1,16 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   my_utils.c										 :+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: ioulkhir <ioulkhir@student.42.fr>		  +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2024/12/27 21:43:22 by ioulkhir		  #+#	#+#			 */
-/*   Updated: 2024/12/27 22:18:02 by ioulkhir		 ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_utils_bonus.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/29 11:10:01 by ioulkhir          #+#    #+#             */
+/*   Updated: 2024/12/29 11:10:02 by ioulkhir         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 void	my_mlx_pixel_put(t_img_data *img, int x, int y, int color)
 {

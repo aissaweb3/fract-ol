@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/27 22:15:24 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/27 23:03:59 by ioulkhir         ###   ########.fr       */
+/*   Created: 2024/12/29 11:09:52 by ioulkhir          #+#    #+#             */
+/*   Updated: 2024/12/29 11:09:53 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 static void	throw_usage(void)
 {
@@ -20,6 +20,8 @@ static void	throw_usage(void)
 	write(2, "\n\t\tJulia", 9);
 	write(2, "\n\t\tBurningship", 15);
 	write(2, "\n\t\tTricon\n", 11);
+	write(2, "\n\n\tJulia:", 10);
+	write(2, "\n\t\t./fractol Julia Re(c) Im(c)\n", 31);
 }
 
 int	main(int ac, char **av)

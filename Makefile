@@ -2,12 +2,12 @@ NAME = fractol
 NAME_BNS = fractol_bonus
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit -lm -O3
+MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit -O3
 RM = rm -f
 
 
 SRC = mandatory/calc_pixel_color.c mandatory/fill_img.c mandatory/fractol_functions.c mandatory/handle_events.c mandatory/init.c mandatory/main.c mandatory/math_utils.c mandatory/my_utils.c
-SRC_BNS = bonus/calc_pixel_color.c bonus/fill_img.c bonus/fractol_functions.c bonus/handle_events.c bonus/init.c bonus/main.c bonus/math_utils.c bonus/my_utils.c
+SRC_BNS = bonus/calc_pixel_color_bonus.c bonus/fill_img_bonus.c bonus/fractol_functions_bonus.c bonus/handle_events_bonus.c bonus/init_bonus.c bonus/main_bonus.c bonus/math_utils_bonus.c bonus/my_utils_bonus.c
 
 OBJ = $(SRC:.c=.o)
 OBJ_BNS = $(SRC_BNS:.c=.o)

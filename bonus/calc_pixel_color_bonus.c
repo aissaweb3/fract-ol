@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_pixel_color.c                                 :+:      :+:    :+:   */
+/*   calc_pixel_color_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/29 10:13:23 by ioulkhir          #+#    #+#             */
+/*   Created: 2024/12/29 11:09:08 by ioulkhir          #+#    #+#             */
 /*   Updated: 2024/12/29 11:35:31 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 static void	init_z_and_c(t_fractal *fractal, t_complex *z,
 		t_complex *c, t_complex px)

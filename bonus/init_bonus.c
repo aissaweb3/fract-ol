@@ -1,16 +1,16 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   init.c											 :+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: ioulkhir <ioulkhir@student.42.fr>		  +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2024/12/27 22:18:20 by ioulkhir		  #+#	#+#			 */
-/*   Updated: 2024/12/27 22:22:49 by ioulkhir		 ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/29 11:09:45 by ioulkhir          #+#    #+#             */
+/*   Updated: 2024/12/29 11:10:35 by ioulkhir         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 static char	ft_strcmp(char *s1, char *s2)
 {
@@ -19,16 +19,16 @@ static char	ft_strcmp(char *s1, char *s2)
 	return (*s1 - *s2);
 }
 
-char	invalid(char *name)
+static char	invalid(char *name, int argc)
 {
 	if (!ft_strcmp(name, "Mandelbrot"))
-		return (1);
+		return ((argc == 2) * 1);
 	if (!ft_strcmp(name, "Julia"))
-		return (2);
+		return ((argc == 4) * 2);
 	if (!ft_strcmp(name, "Burningship"))
-		return (3);
+		return ((argc == 2) * 3);
 	if (!ft_strcmp(name, "Tricon"))
-		return (4);
+		return ((argc == 2) * 4);
 	return (0);
 }
 
@@ -64,10 +64,10 @@ static void	mlx_failure(t_fractal *fractal)
 	{
 		if (fractal->img.img_ptr)
 			mlx_destroy_image(fractal->mlx_connection, fractal->img.img_ptr);
-		free(fractal->mlx_connection);
-		fractal->mlx_connection = NULL;
+		if (fractal->mlx_window)
+			mlx_destroy_window(fractal->mlx_connection, fractal->mlx_window);
 	}
-	write(2, "Minilibx error !", 17);
+	write(2, "Minilibx error !\n", 18);
 	exit(0);
 }
 
@@ -78,7 +78,7 @@ char	fractal_init(t_fractal *fractal, int argc, char **argv)
 	if (argc == 1)
 		return (1);
 	fractal->name = argv[1];
-	fractal_index = invalid(fractal->name);
+	fractal_index = invalid(fractal->name, argc);
 	if (fractal_index == 0)
 		return (1);
 	fractal->mlx_connection = mlx_init();

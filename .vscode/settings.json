@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "events.h": "c",
+        "ostream": "c",
+        "fractol_bonus.h": "c",
+        "events_bonus.h": "c"
+    }
+}
