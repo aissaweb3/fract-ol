@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 11:09:08 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 11:35:31 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2024/12/29 12:05:33 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,19 @@ static void	init_z_and_c(t_fractal *fractal, t_complex *z,
 	{
 		c->real = fractal->julia_x;
 		c->im = fractal->julia_y;
-		z->real = map(px.real, WIDTH, DFLT_WDTH_MIN, DFLT_WDTH_MAX) * fractal->zoom + fractal->shift_x;
-		z->im = map(px.im, HEIGHT, DFLT_HGHT_MIN, DFLT_HGHT_MAX) * fractal->zoom + fractal->shift_y;
+		z->real = map(px.real, WIDTH, DWM, DWMX)
+			* fractal->zoom + fractal->shift_x;
+		z->im = map(px.im, HEIGHT, DHM, DHMX)
+			* fractal->zoom + fractal->shift_y;
 	}
 	else
 	{
 		z->real = 0.0;
 		z->im = 0.0;
-		c->real = map(px.real, WIDTH, DFLT_WDTH_MIN, DFLT_WDTH_MAX) * fractal->zoom + fractal->shift_x;
-		c->im = map(px.im, HEIGHT, DFLT_HGHT_MIN, DFLT_HGHT_MAX) * fractal->zoom + fractal->shift_y;
+		c->real = map(px.real, WIDTH, DWM, DWMX)
+			* fractal->zoom + fractal->shift_x;
+		c->im = map(px.im, HEIGHT, DHM, DHMX)
+			* fractal->zoom + fractal->shift_y;
 	}
 }
 

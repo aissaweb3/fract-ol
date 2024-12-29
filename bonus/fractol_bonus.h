@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 11:09:25 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 11:34:36 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2024/12/29 12:05:33 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 # define WIDTH  800
 # define HEIGHT 800
 
-# define DFLT_WDTH_MIN -1
-# define DFLT_WDTH_MAX 1
+# define DWM -1
+# define DWMX 1
 
-# define DFLT_HGHT_MIN -1
-# define DFLT_HGHT_MAX 1
+# define DHM -1
+# define DHMX 1
 
 typedef struct s_complex
 {

@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 11:09:39 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 11:44:42 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2024/12/29 12:05:33 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ int	scroll_handler(int button, int x, int y, void *param)
 	else
 		return (0);
 	fractal->zoom *= zoom_factor;
-	fractal->shift_x -= map(x, WIDTH, DFLT_WDTH_MIN, DFLT_WDTH_MAX) * (fractal->zoom - old_zoom);
-	fractal->shift_y -= map(y, HEIGHT, DFLT_HGHT_MIN, DFLT_HGHT_MAX) * (fractal->zoom - old_zoom);
+	fractal->shift_x += map(x, WIDTH, DWM, DWMX)
+		* (old_zoom - fractal->zoom);
+	fractal->shift_y += map(y, HEIGHT, DHM, DHMX)
+		* (old_zoom - fractal->zoom);
 	fill_img(fractal);
 	return (0);
 }
@@ -41,8 +43,8 @@ int	julia_mouse_handler(int x, int y, void *param)
 	fractal = (t_fractal *)param;
 	if (fractal->mouse_track == 0)
 		return (0);
-	fractal->julia_x = map(x, WIDTH, DFLT_WDTH_MIN, DFLT_WDTH_MAX);
-	fractal->julia_y = map(y, HEIGHT, DFLT_HGHT_MIN, DFLT_HGHT_MAX);
+	fractal->julia_x = map(x, WIDTH, DWM, DWMX);
+	fractal->julia_y = map(y, HEIGHT, DHM, DHMX);
 	fill_img(fractal);
 	return (0);
 }
@@ -62,13 +64,13 @@ int	key_press_handler(int keycode, void *param)
 	fractal = (t_fractal *)param;
 	shift_val = 0.1;
 	if (keycode == KEY_LEFT)
-		fractal->shift_x += map(shift_val, WIDTH, DFLT_WDTH_MIN, DFLT_WDTH_MAX) * fractal->zoom;
+		fractal->shift_x += map(shift_val, WIDTH, DWM, DWMX) * fractal->zoom;
 	else if (keycode == KEY_RIGHT)
-		fractal->shift_x -= map(shift_val, WIDTH, DFLT_WDTH_MIN, DFLT_WDTH_MAX) * fractal->zoom;
+		fractal->shift_x -= map(shift_val, WIDTH, DWM, DWMX) * fractal->zoom;
 	else if (keycode == KEY_UP)
-		fractal->shift_y += map(shift_val, HEIGHT, DFLT_HGHT_MIN, DFLT_HGHT_MAX) * fractal->zoom;
+		fractal->shift_y += map(shift_val, HEIGHT, DHM, DHMX) * fractal->zoom;
 	else if (keycode == KEY_DOWN)
-		fractal->shift_y -= map(shift_val, HEIGHT, DFLT_HGHT_MIN, DFLT_HGHT_MAX) * fractal->zoom;
+		fractal->shift_y -= map(shift_val, HEIGHT, DHM, DHMX) * fractal->zoom;
 	else if (keycode == MINUS_KEY)
 		fractal->iterations_count -= 10;
 	else if (keycode == PLUS_KEY)
