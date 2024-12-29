@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 10:13:54 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 12:05:33 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2024/12/29 12:18:27 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# define WIDTH  800
-# define HEIGHT 800
+# define WIDTH  400
+# define HEIGHT 400
 
 # define DWM -1
 # define DWMX 1
