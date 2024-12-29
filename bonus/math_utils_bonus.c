@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 11:09:57 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 11:09:58 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2024/12/29 12:43:48 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ t_complex	sub(t_complex a, t_complex b)
 
 double	complex_module(t_complex z)
 {
-	return (sqrt((z.real * z.real) + (z.im * z.im)));
+	return ((z.real * z.real) + (z.im * z.im));
 }

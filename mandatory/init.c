@@ -31,7 +31,7 @@ static char	invalid(char *name, int argc)
 static void	continue_init(t_fractal *fractal,
 		char fractal_index, int argc, char **argv)
 {
-	fractal->diversion_radius = 2;
+	fractal->diversion_radius = 4;
 	fractal->iterations_count = 240;
 	if (fractal_index == 1 || fractal_index == 2)
 		fractal->math_func = mandelbrot_julia_func;

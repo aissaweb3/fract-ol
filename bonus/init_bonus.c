@@ -6,7 +6,7 @@
 /*   By: ioulkhir <ioulkhir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 11:09:45 by ioulkhir          #+#    #+#             */
-/*   Updated: 2024/12/29 11:10:35 by ioulkhir         ###   ########.fr       */
+/*   Updated: 2024/12/29 12:43:37 by ioulkhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	invalid(char *name, int argc)
 static void	continue_init(t_fractal *fractal,
 		char fractal_index, int argc, char **argv)
 {
-	fractal->diversion_radius = 2;
+	fractal->diversion_radius = 4;
 	fractal->iterations_count = 240;
 	if (fractal_index == 1 || fractal_index == 2)
 		fractal->math_func = mandelbrot_julia_func;
